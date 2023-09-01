@@ -220,6 +220,47 @@ The process of recording sound involves several steps:
 - **Traditional Audio Systems**: These involve feature engineering where hand-crafted features are used for analysis and prediction.
 - **Deep Learning Audio Systems**: These leverage automatic feature extraction through deep neural networks, providing a higher level of abstraction.
 
+Audio Processing in Ml
+Time-domain features
+frequecnty domain freatruse
+time-frequency domain featured
+
+Time domain features
+source ==> ADC ==> framing ==> feature computation ==> aggregration(mean, median, Gaussian Mixture Modle)==> feature value/vector/matrix
+
+Frames
+percivable audio chunks
+ 1 sample @ 44.1kHz = .0227ms
+ duration 1 sample<< Ear's time resolution 10ms
+ power of 2 num. samples increases speed
+ typical value: 256-8192
+
+ df = 1/sr .K
+ K -> frame size
+ df -> duration of frame
+
+
+ Frequency-domain feature pipeline
+ source ==> ADC ==> frame ==> windowing ==> forier transform ==> feature computation ==> aggregartion ==> feature value/vector/matrix
+
+Spectral leakage
+processed signal isn't an integer number of periods
+endpoints are discontiuous
+discontiuities appears as high-frequency components not present in the original signal
+
+windowing
+apply windowing function to each frame
+elimainates samples at both ends of a frame
+generates a periodic signal
+
+Hann window
+w(k) = 0.5 (1-cos((2pik)/K-1)), k = 1...K
+
+sw(k) = s(k)*w(k), k = 1,..K
+
+overlaping frame helps endpoints to contribute in the signal
+
+
 
 # Reference
 <a href='https://github.com/musikalkemist/AudioSignalProcessingForML/tree/master/1-%20Overview'>AudioSignalProcessingForML</a><br>
