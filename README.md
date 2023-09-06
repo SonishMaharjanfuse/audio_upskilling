@@ -261,6 +261,52 @@ sw(k) = s(k)*w(k), k = 1,..K
 overlaping frame helps endpoints to contribute in the signal
 
 
+Time-domain audio featrues
+Amplitude envelop(AE)
+Root-mean-square energy (RMS)
+Zero-crossing rate(ZCR)
+
+Amplitude envelope
+max amplitude value of all samples in a frame
+give rough idea of loudness
+sensitive to outliers
+
+
+<img  src='image/ae.png'>
+<img  src='image/ae2.png'>
+AEt = max((t+1)(k-1))(k=t.K) s(k)
+
+use
+onset detection(identify notes), music genre classification
+
+Root-mean-square energy
+rms of all samples in a frame
+indicator of loudness
+less sensitive to outliers than AE
+<img src='image/rms.png'>
+
+use
+audio segmentation, music genre classification
+
+Zero crossing rate
+number of times a signal crosses the horizontal axis
+
+<img src='image/zcr.png'>
+
+use
+recognition of percussive vs pitch sounds
+monophonic pitch estimation
+voice/unvoiced decision for speech signals
+
+
+Fourier Transform
+decompoer complex sound into freaquency domain
+time ==> frequency
+compare signal with sinusods of various frequency
+for each frequency we get magnitude and phase
+high maginitude indicates high similarity between the signal and a sinusoid
+
+
 
 # Reference
 <a href='https://github.com/musikalkemist/AudioSignalProcessingForML/tree/master/1-%20Overview'>AudioSignalProcessingForML</a><br>
