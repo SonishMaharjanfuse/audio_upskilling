@@ -97,3 +97,15 @@ The decoder simply uses a transposed convolution layer, with the same stride and
 s<sup>^</sup><sub>k</sub> = conv1d-transpose(m<sub>k</sub> ∗ h)
 
 where s<sup>^</sup><sub>k</sub> ∈ R<sup>T</sup> denotes the separated source k.
+
+
+# Spleeter
+Spleeter is a model that is used in seperation of music source seperatioin. It helps in Music Information Retrival(MIR) for source seperation such as vocal lyrics analysis from audio, music transription, singer identicication or vocal melody extraction.
+
+## Spleeter details
+It contain models for:
+- vocal seperation
+- 4 steam seperation (vocal, bass, drum and others)
+- 5 steam seperation (vocal, bass, drum, piano and others)
+
+The pre-trained models are U-nets. The U-net is a encoder/decoder Convolutional Neural Network (CNN) architecture with skip connections. We used 12-layer U-nets (6 layers for the encoder and 6 for the decoder). A U-net is used for estimating a soft mask for each source (stem).Training loss is a L1-norm between masked input mix spectrograms and source target spectrograms. The models were trained on Deezer internal datasets using Adam. Separation is then done from estimated source spectrograms using soft masking or multi-channel Wiener filtering.
