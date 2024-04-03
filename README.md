@@ -1,4 +1,4 @@
-About the <h1>Audio Upskiling</h1>
+# Audio Upskilling
 
 [Sprint 1](https://github.com/SonishMaharjanfuse/audio_upskilling/tree/sprint-1)
 
